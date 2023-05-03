@@ -30,10 +30,14 @@ void window::on_pushButton_clicked()
     QString bitrate = ui->bitrate->text();
     QString monitor = ui->monitor->text();
     QString output = ui->output->text();
+    QString acodec = ui->acodec->text();
+    QString abitrate = ui->abitrate->text();
+    QString resolution_2 = ui->resolution_2->text();
+    QString arate = ui->arate->text();
     QTextStream output2(stdout);
-    QString command = "ffmpeg -video_size res123 -framerate frames476 -f x11grab -i monitor321 -f pulse -ac 2 -i pulsedev123 -acodec aac -vcodec videocoedc123 -vb bitsrate999 vidneoouput &";
+    QString command = "ffmpeg -video_size res123 -framerate frames476 -f x11grab -i monitor321 -f pulse -ac 2 -i pulsedev123 -acodec auiocodek -vcodec videocoedc123 -crf bitsrate999 -b:a audiobitrate -ar arates -vf scale=scal123 vidneoouput &";
     command.replace("res123", resolution).replace("frames476", framerate).replace("monitor321", monitor).replace("pulsedev123", pulseaudio).replace("videocoedc123", codec).replace("bitsrate999", bitrate).
-        replace("vidneoouput", output);
+        replace("vidneoouput", output).replace("auiocodek", acodec).replace("audiobitrate", abitrate).replace("scal123", resolution_2).replace("arates", arate);
     std::string strcommand = command.toUtf8().constData();
     const char* charcommand = strcommand.c_str();
     std::system(charcommand);
